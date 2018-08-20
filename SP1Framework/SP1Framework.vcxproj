@@ -82,13 +82,13 @@
     <ClCompile Include="Framework\timer.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MusicManager.cpp" />
+    <ClCompile Include="mALL.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\console.h" />
     <ClInclude Include="Framework\timer.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="MusicManager.h" />
+    <ClInclude Include="mALL.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="mainmenu.txt" />

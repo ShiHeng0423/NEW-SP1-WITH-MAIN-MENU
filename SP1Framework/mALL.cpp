@@ -1,24 +1,22 @@
 #include <Windows.h>
-#include "MusicManager.h"
+#include "mALL.h"
 #include <iostream>
-#pragma comment( lib, "winmm.lib" )
+
 using namespace std;
-vector<MLoaded> LoadedFiles;
+
+vector<mLoad> loadFiles;
 void Mshutdown()
 {
 	mciSendCommand(MCI_ALL_DEVICE_ID, MCI_CLOSE, MCI_WAIT, NULL);
 }
 void MusicInit()
 {
-	MLoaded loaded;
-	// mpegvideo is Audio for MP3 (*.mp3) [VOLUME WILL NOT WORK IS WAVEAUDIO IS USED (*.wav)!!]
-	// volume is a string eg "0" - "100"
-	// &loaded is a MLoaded Struct.
-	MusicLoad("Raining Tacos - Parry Gripp  BooneBum.mp3", "mpegvideo", "tacos", "100", &loaded);
-	MusicLoad("Wii Music - Gaming Background Music (HD).mp3", "mpegvideo", "alias", "100", &loaded);
-	LoadedFiles.push_back(loaded);
+	mLoad load;
+	MusicLoad("Raining Tacos - Parry Gripp  BooneBum.mp3", "mpegvideo", "tacos", "100", &load);
+	MusicLoad("Wii Music - Gaming Background Music (HD).mp3", "mpegvideo", "alias", "100", &load);
+	loadFiles.push_back(load);
 }
-bool MusicLoad(string file, string type, string alias, string initalvolume, MLoaded* Returnfile)
+bool MusicLoad(string file, string type, string alias, string initalvolume, mLoad* Returnfile)
 {
 	MCIERROR me;
 	string buff;

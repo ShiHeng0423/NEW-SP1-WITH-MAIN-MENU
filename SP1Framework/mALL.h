@@ -8,13 +8,13 @@ void Mshutdown();
 void MusicInit();
 bool MusicPlay(string alias, string arguments);
 bool MusicStop(string alias);
-struct MLoaded
+struct mLoad
 {
 	std::string file = ""; // Can be empty!
 	std::string type = ""; // Can be empty!
 	std::string alias = ""; // Can be empty!
 	int status;
 };
-bool MusicLoad(std::string file, std::string type, std::string alias, std::string initalvolume, MLoaded* Returnfile);
+bool MusicLoad(std::string file, std::string type, std::string alias, std::string initalvolume, mLoad* Returnfile);
 #endif // !MUSIC_MAN
 

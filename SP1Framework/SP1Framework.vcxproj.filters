@@ -33,7 +33,7 @@
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MusicManager.cpp">
+    <ClCompile Include="mALL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +47,7 @@
     <ClInclude Include="game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MusicManager.h">
+    <ClInclude Include="mALL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

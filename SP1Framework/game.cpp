@@ -3,7 +3,7 @@
 //
 #include "game.h"
 #include "Framework\console.h"
-#include "MusicManager.h"
+#include "mALL.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -40,7 +40,7 @@ bool clearevent1 = false;
 bool clearevent2 = false;
 bool clearevent3 = false;
 
-int mazelevel = 1;
+int mazelevel = 0;
 
 void renderMapOpenTrap1();
 void renderMapOpenTrap2();
@@ -1296,20 +1296,20 @@ void renderSplashScreen()
 	c.Y = 4;
 	c.X = 27;
 	console.writeToBuffer(c, "Amazeing Game", 0x03);
-	c.Y += 3;
-	c.X = 20;
-	console.writeToBuffer(c, "Please  Select  Your  Game  Mode", 0x09);
-	c.Y += 3;
+	c.Y = 7;
+	c.X = 18;
+	console.writeToBuffer(c, "Please  Select  Your  Game  Mode", 0x07);
+	c.Y = 10;
 	c.X = 28;
-	console.writeToBuffer(c, "Story Mode", 0x09);
-	c.Y += 3;
+	console.writeToBuffer(c, "Story Mode", 0x05);
+	c.Y = 13;
 	c.X = 27;
-	console.writeToBuffer(c, "Special Mode", 0x09);
-	c.Y += 3;
+	console.writeToBuffer(c, "Special Mode", 0x05);
+	c.Y = 16;
 	c.X = 28;
-	console.writeToBuffer(c, "Exit Game", 0x09);
+	console.writeToBuffer(c, "Exit Game", 0x05);
 	rendermainmenu();
-	console.writeToBuffer(Char.pointer, "->", 0x09);
+	console.writeToBuffer(Char.pointer, "->", 0x06);
 }
 
 

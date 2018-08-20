@@ -2,7 +2,7 @@
 
 #include "Framework\timer.h"
 #include "game.h"
-#include "MusicManager.h"
+#include "mALL.h"
 
 CStopWatch timer;                            // Timer function to keep track of time and the frame rate
 bool escgame = false;                    // Set to true if you want to quit the game
