@@ -54,6 +54,7 @@ enum EKEYS
 	K_ESCAPE,
 	K_SPACE,
 	K_JUMP,
+	K_RETURN,
 	//everything above count
 	K_COUNT,
 };
@@ -72,6 +73,7 @@ struct SGameChar
     COORD character;
 	COORD pointer;
     bool  m_bActive;
+	bool mainmenu;
 };
 
 void init        ( void );      // initialize your variables, allocate memory, etc

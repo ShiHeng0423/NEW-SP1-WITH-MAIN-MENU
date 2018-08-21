@@ -104,6 +104,7 @@ void init( void )
 	}
 	Char.pointer.X = 21;
 	Char.pointer.Y = 10;
+	Char.mainmenu = false;
 }
 //--------------------------------------------------------------
 // Purpose  : Reset before exiting the program
@@ -132,6 +133,7 @@ void shutdown( void )
 //--------------------------------------------------------------
 void keyboard( void )
 {    
+	KeyPressed[K_RETURN] = isKeyPressed(VK_RETURN);
     KeyPressed[K_UP]     = isKeyPressed(VK_UP);
     KeyPressed[K_DOWN]   = isKeyPressed(VK_DOWN);
     KeyPressed[K_LEFT]   = isKeyPressed(VK_LEFT);
@@ -194,8 +196,7 @@ void loadscreen()
 
 void splashScreenWait()    // waits for time to pass in splash screen
 {
-	
-        //g_eGameState = S_GAME;
+	g_eGameState = S_GAME;
 }
 
 void gameplay()            // gameplay logic
@@ -1292,10 +1293,16 @@ void clearScreen()
 // renders the starting  screen
 void renderSplashScreen()
 {
+	renderGame();
+}
+
+
+void rendermainmenu()
+{
 	COORD c;
 	c.Y = 4;
 	c.X = 27;
-	console.writeToBuffer(c, "Amazeing Game", 0x03);
+	console.writeToBuffer(c, "A-maze-ing Game", 0x03);
 	c.Y = 7;
 	c.X = 18;
 	console.writeToBuffer(c, "Please  Select  Your  Game  Mode", 0x07);
@@ -1308,13 +1315,7 @@ void renderSplashScreen()
 	c.Y = 16;
 	c.X = 28;
 	console.writeToBuffer(c, "Exit Game", 0x05);
-	rendermainmenu();
 	console.writeToBuffer(Char.pointer, "->", 0x06);
-}
-
-
-void rendermainmenu()
-{
 	bool pointerchanged = false;
 	if (g_dBounceTime > ElapsedTime)
 		return;
@@ -1328,50 +1329,67 @@ void rendermainmenu()
 		Char.pointer.Y -= 3;
 		pointerchanged = true;
 	}
-
 	if (pointerchanged == true)
 	{
 		g_dBounceTime = ElapsedTime + 0.125;
 	}
-
+	if (KeyPressed[K_RETURN] && Char.pointer.Y == 10)
+	{
+	}
+	if (KeyPressed[K_RETURN] && Char.pointer.Y == 13)
+	{
+		Char.mainmenu = true;
+		renderGame();
+	}
+	if (KeyPressed[K_RETURN] && Char.pointer.Y == 16)
+	{
+		escgame = true;
+	}
  }
 //loading of event / D map
 void renderGame()
 {
 	//open maze1E trap
 
-	if (opentrap1 == true && clearevent1 == false && mazelevel == 0)
+	if (Char.mainmenu == false)
 	{
-		renderMapOpenTrap1();
+		rendermainmenu();
 	}
-	//maze 1D 
-	else if (clearevent1 == true && opentrap1 == true && mazelevel == 0)
-	{
-		renderMapEventClear1();
-	}
-	//maze 2 
-
-	else if ((opentrap2 == true || opendoor == true) && mazelevel == 1)
-	{
-		//maze2D 
-		if (clearevent2 == true)
-		{
-			renderMapEventClear2();
-		}
-		//open maze2E trap
-		else
-		{
-			renderMapOpenTrap2();
-		}
-	}
-	//open normal / event map
 	else
 	{
-		renderMap();
-	}
-	//update character location
+		if (opentrap1 == true && clearevent1 == false && mazelevel == 0)
+		{
+			renderMapOpenTrap1();
+		}
+		//maze 1D 
+		else if (clearevent1 == true && opentrap1 == true && mazelevel == 0)
+		{
+			renderMapEventClear1();
+		}
+		//maze 2 
 
-	renderCharacter();
+		else if ((opentrap2 == true || opendoor == true) && mazelevel == 1)
+		{
+			//maze2D 
+			if (clearevent2 == true)
+			{
+				renderMapEventClear2();
+			}
+			//open maze2E trap
+			else
+			{
+				renderMapOpenTrap2();
+			}
+		}
+		//open normal / event map
+		else
+		{
+			renderMap();
+		}
+		//update character location
+
+		renderCharacter();
+	}
 }
 //loading map
 void renderMap()
