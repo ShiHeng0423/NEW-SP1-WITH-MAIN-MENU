@@ -84,13 +84,16 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <Media Include="Wii Music - Gaming Background Music (HD).mp3">
-      <Filter>Resource Files</Filter>
-    </Media>
     <Media Include="Raining Tacos - Parry Gripp  BooneBum.mp3">
       <Filter>Resource Files</Filter>
     </Media>
-    <Media Include="Wii Music - Gaming Background Music (HD).wav">
+    <Media Include="83408_newgrounds_lol_u_.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Domina Soundtrack - Gladius.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Eric_Prydz_-_Opus_OUT_NOW-iRA82xLsb_w.mp3">
       <Filter>Resource Files</Filter>
     </Media>
   </ItemGroup>

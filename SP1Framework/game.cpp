@@ -96,10 +96,20 @@ void init( void )
 		{
 			MusicPlay("tacos", "repeat");
 		}
-		else
+		else if (mazelevel == 1)
 		{
 			MusicStop("tacos");
-			MusicPlay("alias", "repeat");
+			MusicPlay("mazelevel1", "repeat");
+		}
+		else if (mazelevel == 2)
+		{
+			MusicStop("mazelevel1");
+			MusicPlay("mazelevel2", "repeat");
+		}
+		else if (mazelevel == 3)
+		{
+			MusicStop("mazelevel2");
+			MusicPlay("mazelevel3", "repeat");
 		}
 	}
 	Char.pointer.X = 21;

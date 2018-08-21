@@ -103,9 +103,10 @@
     <Text Include="MAZE3E.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Media Include="83408_newgrounds_lol_u_.mp3" />
+    <Media Include="Domina Soundtrack - Gladius.mp3" />
+    <Media Include="Eric_Prydz_-_Opus_OUT_NOW-iRA82xLsb_w.mp3" />
     <Media Include="Raining Tacos - Parry Gripp  BooneBum.mp3" />
-    <Media Include="Wii Music - Gaming Background Music (HD).mp3" />
-    <Media Include="Wii Music - Gaming Background Music (HD).wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
