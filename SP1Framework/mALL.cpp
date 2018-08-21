@@ -5,10 +5,7 @@
 using namespace std;
 
 vector<mLoad> loadFiles;
-void Mshutdown()
-{
-	mciSendCommand(MCI_ALL_DEVICE_ID, MCI_CLOSE, MCI_WAIT, NULL);
-}
+
 void MusicInit()
 {
 	mLoad load;
